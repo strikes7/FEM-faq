@@ -1,0 +1,36 @@
+@use "abstract" as *;
+
+.faq {
+  flex-direction: column;
+  inline-size: toRem(335);
+  block-size: toRem(535);
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-size: 76%;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  &::before {
+    display: none;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    inset-block-start: -22%;
+    width: 76%;
+  }
+
+  &__image {
+    inset-inline-start: 0;
+  }
+
+  &__content-wrapper {
+    align-self: baseline;
+    inline-size: auto;
+    padding: toRem(126) toRem(22) toRem(48) toRem(22);
+  }
+
+  &__title {
+    text-align: center;
+    margin-block-end: 1rem;
+  }
+}

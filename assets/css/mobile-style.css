@@ -1,0 +1,29 @@
+.faq {
+  flex-direction: column;
+  inline-size: 20.9375rem;
+  block-size: 33.4375rem;
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-size: 76%;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.faq::before {
+  display: none;
+}
+.faq__image-wrapper {
+  position: absolute;
+  inset-block-start: -22%;
+  width: 76%;
+}
+.faq__image {
+  inset-inline-start: 0;
+}
+.faq__content-wrapper {
+  align-self: baseline;
+  inline-size: auto;
+  padding: 7.875rem 1.375rem 3rem 1.375rem;
+}
+.faq__title {
+  text-align: center;
+  margin-block-end: 1rem;
+}

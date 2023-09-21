@@ -1,0 +1,122 @@
+@use "../abstract" as *;
+
+.faq {
+  display: flex;
+
+  position: relative;
+  inline-size: min(toRem(920), 95%);
+  block-size: toRem(510);
+  border-radius: 0.75rem;
+  background-color: $clr-bg-card;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 75% 150%;
+  background-position: -134% 52%, -17% center;
+
+  &::before {
+    display: block;
+    position: absolute;
+    width: toRem(180);
+    height: toRem(180);
+    inset-inline-start: -12.5%;
+    inset-block-start: 41%;
+    content: "";
+    background-image: url("../images/illustration-box-desktop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+  }
+
+  &__image-wrapper {
+    width: 50%;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+    inset-inline-start: -18%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__content-wrapper {
+    inline-size: toRem(350);
+    float: right;
+    padding: toRem(72) toRem(92) toRem(82) 0;
+    overflow: hidden;
+  }
+
+  &__title {
+    margin-block: 0 2.25rem;
+    font-size: $fs-600;
+  }
+
+  &__questions {
+    list-style: none;
+    font-size: $fs-400;
+    margin-block: 0;
+    padding-inline-start: 0;
+    color: $clr-text-neutral-blue-200;
+    list-style-type: none;
+  }
+
+  &__question {
+    border-bottom: 1px solid $clr-neutral-grayish-blue;
+    padding-block: 0.95rem;
+    max-height: 1rem;
+    overflow: hidden;
+    transition: max-height 0.4s;
+
+    &.expanded {
+      max-height: 8rem;
+    }
+
+    &.expanded > &__title {
+      color: $clr-text-dark-desaturated-blue;
+      font-weight: 700;
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &:not(.expanded) > &__title:hover {
+      color: $clr-text-red;
+      transition: color 0.25s ease-in-out;
+    }
+
+    &__title {
+      position: relative;
+      font-size: $fs-500;
+      font-weight: 400;
+
+      margin-block: 0 1rem;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        top: 15%;
+        right: 0;
+        display: inline-block;
+        content: "";
+        width: 0.75em;
+        height: 0.75em;
+        background-image: url("../images/icon-arrow-down.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform-origin: center;
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+
+    &__paragraph {
+      line-height: 1.5;
+      margin-block: 0;
+      margin-inline-end: 1.5rem;
+    }
+  }
+}

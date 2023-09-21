@@ -1,0 +1,12 @@
+@use "../abstract" as *;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100dvh;
+  margin: 0;
+  font-family: $ff-primary;
+  background: linear-gradient(0deg, $clr-bg-gd-blue, $clr-bg-gd-violet)
+    no-repeat;
+}
